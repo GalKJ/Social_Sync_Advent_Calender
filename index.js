@@ -1,23 +1,26 @@
 
 // Selected global variables
     const gallery = document.querySelector('.gallery');
-    const overlay = document.querySelector('.overlay');
-    const overlayImage = overlay.querySelector('img');
-    const overlayClose = overlay.querySelector('.close')
+    // const overlay = document.querySelector('.overlay');
+    // const overlayImage = overlay.querySelector('img');
+    // const overlayClose = overlay.querySelector('.close')
+    const videos = document.querySelectorAll('.videos');
+    const images = document.querySelectorAll('.images');
 
-// Function to create HTML elements 
-    function generateHTML() {
-    return `
-        <div class="item">
-        <img src="https://picsum.photos/500">
-        <div class="item__overlay">
-            <button>View →</button>
-        </div>
-        </div>
-    `;
-    }
 
-// Function creates random numbers. 
-    function randomNumber(limit) {
+// Function generates random numbers. 
+    function randomNumberGenerator(limit) {
         return Math.floor(Math.random() * limit) + 1;
       }
+
+      images.forEach(image => {
+        image.src = `https://picsum.photos/id/${randomNumberGenerator(200)}/400`
+        image.id = 
+      });
+
+
+
+    
+
+    
+    
