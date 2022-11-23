@@ -1,23 +1,23 @@
 
-// API endpoints
-const baseEndpoint = 'https://picsum.photos/';
-const squareRandomImageEndpoint = `${baseEndpoint}/200`
-// const uniquePostcodeEndpoint = `${baseEndpoint}/postcodes`
-
 // Selected global variables
     const gallery = document.querySelector('.gallery');
     const overlay = document.querySelector('.overlay');
     const overlayImage = overlay.querySelector('img');
-    const overlayClose = overlay.querySelector('.close');
+    const overlayClose = overlay.querySelector('.close')
 
 // Function to create HTML elements 
-    function generateHTML([h, v]) {
+    function generateHTML() {
     return `
-        <div class="item h${h} v${v}">
-        <img src="">
+        <div class="item">
+        <img src="https://picsum.photos/500">
         <div class="item__overlay">
             <button>View →</button>
         </div>
         </div>
     `;
     }
+
+// Function creates random numbers. 
+    function randomNumber(limit) {
+        return Math.floor(Math.random() * limit) + 1;
+      }
