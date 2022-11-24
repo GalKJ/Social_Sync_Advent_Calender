@@ -1,22 +1,26 @@
+function generateHTML([h, v]) {
+    return `
+    <div class="item h${h} v${v}">
+      <img src="https://picsum.photos/id/${randomNumber(200)}/400">
+      <div class="item__overlay">
+        <button>View →</button>
+      </div>
+    </div>
 
-// Selected global variables
-    const gallery = document.querySelector('.gallery');
-    // const overlay = document.querySelector('.overlay');
-    // const overlayImage = overlay.querySelector('img');
-    // const overlayClose = overlay.querySelector('.close')
-    const videos = document.querySelectorAll('.videos');
-    const images = document.querySelectorAll('.images');
+    <div class="video-item h${h} v${v}">
+      <video height=400 width=400 autoplay muted loop src="./videos/${randomNumber(
+        5
+      )}.mp4"></video>
+      <div class="item__overlay">
+        <button>View →</button>
+      </div>
+    </div>
+  `;
+  }
 
-
-// Function generates random numbers. 
-    function randomNumberGenerator(limit) {
-        return Math.floor(Math.random() * limit) + 1;
-      }
-
-      images.forEach(image => {
-        image.src = `https://picsum.photos/id/${randomNumberGenerator(200)}/400`
-        image.id = 
-      });
+  function randomNumber(limit) {
+    return Math.floor(Math.random() * limit) + 1;
+  }
 
 
 
