@@ -2,14 +2,14 @@
 // Global selected variables
     
 // Function to draw image and video items.
-    function drawItems(container, row, column) {
+    function drawItems(container, id) {
         const imgItem = document.createElement('div');
-        imgItem.className = 'img-Items';
-        imgItem.id = `img-Item${row}${column}`;
+        imgItem.className = 'img-items';
+        imgItem.id = `img-item${id}`;
         
         const image = document.createElement('img');
         image.className = 'image';
-        image.id = `image${row}${column}`
+        image.id = `image${id}`
         image.height = 640;
         image.width = 360;
         image.src = `https://picsum.photos/id/${randomNumber(20)}/400`
@@ -18,12 +18,12 @@
         container.appendChild(imgItem);
 
         const videoItem = document.createElement('div');
-        videoItem.className = 'video-Items';
-        videoItem.id = `video-Item${row}${column}`;
+        videoItem.className = 'video-items';
+        videoItem.id = `video-item${id}`;
         
         const video = document.createElement('video');
         video.className = 'videos';
-        video.id = `video${row}${column}`;
+        video.id = `video${id}`;
         video.src = `./videos/${randomNumber(5)}.mp4`;
         video.preload = 'auto';
         video.autoplay = true;
@@ -36,14 +36,12 @@
 
 // Function to draw grid and call draw items function.
     function drawGrid(container) {
-        const grid = document.createElement('div');
-        grid.className = 'grid';
+        
+        const grid = document.querySelector('.grid');
     
-        for (let i = 0; i < 5; i++) {
-            for (let j = 0; j < 5; j++) {
-                drawItems(grid, i, j);
-                
-            }
+        for (let i = 0; i < 12; i++) {
+
+                drawItems(grid, i);
         }
     
         container.appendChild(grid);
