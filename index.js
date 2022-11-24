@@ -1,30 +1,7 @@
 
 // Global selected variables
     
-    // function generateHTML(container, row, column) {
-    //     let html = `
-    //     <div class="item row${row} column${column}">
-    //     <img src="https://picsum.photos/id/${randomNumber(200)}/400">
-    //     <div class="item__overlay">
-    //         <button>View →</button>
-    //     </div>
-    //     </div>
-
-    //     <div class="video-item row${row} column${column}">
-    //     <video height=400 width=400 autoplay muted loop src="./videos/${randomNumber(
-    //         5
-    //     )}.mp4"></video>
-    //     <div class="item__overlay">
-    //         <button>View →</button>
-    //     </div>
-    //     </div>
-    // `;
-
-    // console.log(html);
-
-    //     // container.appendChild(html);
-    // }
-
+// Function to draw image and video items.
     function drawItems(container, row, column) {
         const imgItem = document.createElement('div');
         imgItem.className = 'img-Items';
@@ -35,7 +12,7 @@
         image.id = `image${row}${column}`
         image.height = 640;
         image.width = 360;
-        image.src = `https://picsum.photos/id/${randomNumber(200)}/400`
+        image.src = `https://picsum.photos/id/${randomNumber(20)}/400`
         imgItem.appendChild(image);
     
         container.appendChild(imgItem);
@@ -57,6 +34,7 @@
         
     }
 
+// Function to draw grid and call draw items function.
     function drawGrid(container) {
         const grid = document.createElement('div');
         grid.className = 'grid';
