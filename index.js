@@ -10,7 +10,7 @@
         const image = document.createElement('img');
         image.className = 'image';
         image.id = `image${id}`
-        image.height = 640;
+        image.height = 360;
         image.width = 360;
         image.src = `https://picsum.photos/id/${randomNumber(20)}/400`
         imgItem.appendChild(image);
@@ -24,9 +24,10 @@
         const video = document.createElement('video');
         video.className = 'videos';
         video.id = `video${id}`;
+        video.height = 360;
+        video.width = 360;
         video.src = `./videos/${randomNumber(5)}.mp4`;
         video.preload = 'auto';
-        video.autoplay = true;
         video.muted = true;
         videoItem.appendChild(video);
     
@@ -36,7 +37,7 @@
 
 // Function to draw grid and call draw items function.
     function drawGrid(container) {
-        
+
         const grid = document.querySelector('.grid');
     
         for (let i = 0; i < 12; i++) {
@@ -48,6 +49,7 @@
     }
 
     function loadPage() {
+
 // Local storage init function below!
 
         // if (!localStorage.getItem('Won')) {
