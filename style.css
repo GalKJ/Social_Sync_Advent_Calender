@@ -6,6 +6,10 @@ body {
     background: linear-gradient(to right, var(--linear-gradient));
 }
 
+h1 {
+    text-align: center;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
