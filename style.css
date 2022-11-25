@@ -22,6 +22,7 @@ h1 {
     display: grid;
     grid-template-columns: 1;
     grid-template-rows: 1;
+    overflow: hidden;
 }
 
 .img-items img {
@@ -53,11 +54,19 @@ h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.open {
+    opacity: 0;
+    transform: translateY(100%);
+    transform: scale(0%);
+    transition: 2s;
+}
+
 /* Video styles */
 .video-items {
     display: grid;
     grid-template-columns: 1;
     grid-template-rows: 1;
+    overflow: hidden;
 }
 
 .video-items video {
