@@ -17,3 +17,36 @@ h1 {
     gap: 1%;
 }
 
+.img-items {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+}
+
+.img-items img {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
+.item-overlay {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    background-color: red;
+}
+.video-items {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+}
+
+.video-items video {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
+.video-item-overlay {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    background-color: forestgreen;
+}
+

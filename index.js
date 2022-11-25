@@ -43,7 +43,7 @@
         videoItem.appendChild(video);
 
         const videoItemOverlay = document.createElement('div');
-        videoItemOverlay.className = 'item-overlay';
+        videoItemOverlay.className = 'video-item-overlay';
         videoItem.appendChild(videoItemOverlay);
 
         const videoViewButton = document.createElement('button');
