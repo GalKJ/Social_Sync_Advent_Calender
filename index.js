@@ -1,5 +1,6 @@
 
 // Global selected variables
+    // const buttons = document.querySelectorAll('button');
     
 // Function to draw image and video items.
     function drawItems(container, id) {
@@ -128,6 +129,30 @@
 
     renderItemNumbers();
 
-   
+    const videoButtons = document.querySelectorAll('.video-view-button');
+    
+    console.log(videoButtons);
+
+    videoButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const overlay = e.currentTarget.parentElement;
+            overlay.className = 'video-item-overlay open';
+        }) 
+    });
+
+    const buttons = document.querySelectorAll('.view-button');
+    console.log(buttons);
+
+    buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const overlay = e.currentTarget.parentElement;
+            overlay.className = 'item-overlay open';
+        })
+    });
+
+    // function addOpenClass() {
+
+    // }
+
     
     
