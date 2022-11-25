@@ -19,6 +19,12 @@
         itemOverlay.className = 'item-overlay';
         imgItem.appendChild(itemOverlay);
 
+        const itemOverlayNumber = document.createElement('p');
+        itemOverlayNumber.className = 'item-overlay-number';
+        itemOverlayNumber.id = `item-overlay-number${id}`
+        itemOverlayNumber.textContent = '';
+        itemOverlay.appendChild(itemOverlayNumber);
+
         const viewButton = document.createElement('button');
         viewButton.className = 'view-button';
         viewButton.textContent = '🎄View🎄';
@@ -46,13 +52,19 @@
         videoItemOverlay.className = 'video-item-overlay';
         videoItem.appendChild(videoItemOverlay);
 
+        const videoItemOverlayNumber = document.createElement('p');
+        videoItemOverlayNumber.className = 'video-item-overlay-number';
+        videoItemOverlayNumber.id = `video-item-overlay-number${id}`
+        videoItemOverlayNumber.textContent = '';
+        videoItemOverlay.appendChild(videoItemOverlayNumber);
+
         const videoViewButton = document.createElement('button');
         videoViewButton.className = 'video-view-button';
         videoViewButton.textContent = '🎅View🎅';
         videoItemOverlay.appendChild(videoViewButton);
     
         container.appendChild(videoItem);
-        
+
     }
 
 // Function to draw grid and call draw items function.
@@ -85,15 +97,37 @@
     }
 
     
-    
-
     function randomNumber(limit) {
         return Math.floor(Math.random() * limit) + 1;
     }
 
 
+    function renderItemNumbers() {
+        const images = document.querySelectorAll('.item-overlay-number')
+        const videos = document.querySelectorAll('.video-item-overlay-number')
+        
+        const imageItemNumberArray = [[2], [4], [6], [8], [10], [12], [14], [16], [18], [20], [22], [24]];
+        
+        const videoItemNumberArray = [[3], [5], [7], [9], [11], [13], [15], [17], [19], [21], [23], [25]];
 
-    
+        
+        const shuffledImageArray = imageItemNumberArray.sort((a, b) => 0.5 - Math.random());
+
+        const shuffledVideoArray = videoItemNumberArray.sort((a, b) => 0.5 - Math.random());
+
+
+        for (let i = 0; i < 12; i++) {
+
+            images[i].textContent = shuffledImageArray[i];
+            videos[i].textContent = shuffledVideoArray[i];
+            
+        }
+    }
+
     loadPage();
+
+    renderItemNumbers();
+
+   
     
     
