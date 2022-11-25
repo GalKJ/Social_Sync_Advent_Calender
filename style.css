@@ -17,6 +17,7 @@ h1 {
     gap: 1%;
 }
 
+/* Image styles */
 .img-items {
     display: grid;
     grid-template-columns: 1;
@@ -36,6 +37,17 @@ h1 {
     justify-items: center;
     align-items: center;
 }
+
+.view-button {
+    font-size: 1.5rem;
+    border: 2px solid forestgreen;
+    color: forestgreen;
+    text-transform: uppercase;
+    background: red;
+    padding: 5px;
+}
+
+/* Video styles */
 .video-items {
     display: grid;
     grid-template-columns: 1;
@@ -54,5 +66,14 @@ h1 {
     display: grid;
     justify-items: center;
     align-items: center;
+}
+
+.video-view-button {
+    font-size: 1.5rem;
+    border: 2px solid red;
+    color: red;
+    text-transform: uppercase;
+    background: forestgreen;
+    padding: 5px;
 }
 

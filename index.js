@@ -48,7 +48,7 @@
 
         const videoViewButton = document.createElement('button');
         videoViewButton.className = 'video-view-button';
-        videoViewButton.textContent = '🎄View🎄';
+        videoViewButton.textContent = '🎅View🎅';
         videoItemOverlay.appendChild(videoViewButton);
     
         container.appendChild(videoItem);
