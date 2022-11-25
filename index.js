@@ -14,8 +14,19 @@
         image.width = 360;
         image.src = `https://picsum.photos/id/${randomNumber(20)}/400`
         imgItem.appendChild(image);
+
+        const itemOverlay = document.createElement('div');
+        itemOverlay.className = 'item-overlay';
+        imgItem.appendChild(itemOverlay);
+
+        const viewButton = document.createElement('button');
+        viewButton.className = 'view-button';
+        viewButton.textContent = '🎄View🎄';
+        itemOverlay.appendChild(viewButton);
     
         container.appendChild(imgItem);
+
+
 
         const videoItem = document.createElement('div');
         videoItem.className = 'video-items';
@@ -30,6 +41,15 @@
         video.preload = 'auto';
         video.muted = true;
         videoItem.appendChild(video);
+
+        const videoItemOverlay = document.createElement('div');
+        videoItemOverlay.className = 'item-overlay';
+        videoItem.appendChild(videoItemOverlay);
+
+        const videoViewButton = document.createElement('button');
+        videoViewButton.className = 'video-view-button';
+        videoViewButton.textContent = '🎄View🎄';
+        videoItemOverlay.appendChild(videoViewButton);
     
         container.appendChild(videoItem);
         
