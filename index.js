@@ -129,29 +129,85 @@
 
     renderItemNumbers();
 
-    const videoButtons = document.querySelectorAll('.video-view-button');
     
-    console.log(videoButtons);
+    // const buttons = document.querySelectorAll('.view-button');
+    // console.log(buttons);
+    
+    // buttons.forEach(button => {
+    //     button.addEventListener('click', (e) => {
+    //         const overlay = e.currentTarget.parentElement;
+    //         overlay.className = 'item-overlay open';
+    //     })
+    // });
+    
+    // const videoButtons = document.querySelectorAll('.video-view-button');
+    
+    // console.log(videoButtons);
 
-    videoButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const overlay = e.currentTarget.parentElement;
-            overlay.className = 'video-item-overlay open';
-        }) 
-    });
+    // videoButtons.forEach(button => {
+    //     button.addEventListener('click', (e) => {
+    //         const overlay = e.currentTarget.parentElement;
+    //         overlay.className = 'video-item-overlay open';
+    //     }) 
+    // });
 
-    const buttons = document.querySelectorAll('.view-button');
+    const buttons = document.querySelectorAll('button');
+    
     console.log(buttons);
 
     buttons.forEach(button => {
         button.addEventListener('click', (e) => {
-            const overlay = e.currentTarget.parentElement;
-            overlay.className = 'item-overlay open';
-        })
+            // const overlay = e.currentTarget.parentElement;
+            // overlay.className = 'video-item-overlay open';
+            // console.log(e.currentTarget.previousSibling.textContent);
+            // console.log(dateSelect.value);
+
+            // if (e.currentTarget.previousSibling.textContent <= dateSelect.value) {
+            //     console.log('open')
+            // } else {
+            //     console.log('not allowed')
+            // }
+
+            // var dynamicPart = "XYZ";
+// \074 is code for < and \076 is code for >
+// var regexObj = new RegExp("\074" + dynamicPart + "\076");    // will match <XYZ>
+// the line above is same as, var regex = /\074abc\076/;
+
+// var input = "<XYZ> Some text </XYZ>";
+// var output = regexObj.test(input);
+
+// console.log(output);
+
+            let num = e.currentTarget.previousSibling.textContent;
+            console.log(num);
+
+            let dynamicPart = num;
+            console.log(dynamicPart);
+            let regexObj = new RegExp(dynamicPart)
+            console.log(regexObj);
+            console.log(dateSelect.value);
+            
+            if (regexObj.test(dateSelect.value)) {
+                console.log('open')
+            } else {
+                console.log('nope')
+            }
+        }) 
     });
 
-    // function addOpenClass() {
+    // function regExDateTest(){
+    //     /e.currentTarget.previousSibling.textContent/.test(dateSelect.value)
+    // }
+    
+    // function openCalenderDoor(boolean) {
 
+    //     let dateSelected = dateSelect.value
+    //     let paragraphTextcontent = 
+    //         if (boolean === true) {
+                
+    //         } else {
+                
+    //         }
     // }
 
     
