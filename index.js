@@ -1,6 +1,6 @@
 
 // Global selected variables
-    // const buttons = document.querySelectorAll('button');
+    const dateSelect = document.querySelector('#date-select');
     
 // Function to draw image and video items.
     function drawItems(container, id) {

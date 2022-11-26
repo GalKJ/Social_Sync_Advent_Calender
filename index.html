@@ -15,6 +15,24 @@
     </section>
 
     <main>
+      <form>
+        <label>
+          Choose your date in December (required, Dec 1st to 25th):
+          <input
+            type="date"
+            name="party"
+            min="2022-12-01"
+            max="2022-12-25"
+            required
+          />
+          <span class="validity"></span>
+        </label>
+
+        <p>
+          <button>Submit</button>
+        </p>
+      </form>
+
       <div id="grid-container">
         <div class="grid">
           <div class="video-items" id="video-1">
@@ -27,8 +45,10 @@
               preload="auto"
             ></video>
             <div class="video-item-overlay">
-              <p class="video-item-overlay-number-1">1</p>
-              <button id="dom-video-button">🎅View🎅</button>
+              <p class="video-item-overlay-number">1</p>
+              <button class="video-view-button" id="dom-video-button">
+                🎅View🎅
+              </button>
             </div>
           </div>
         </div>

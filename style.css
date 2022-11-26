@@ -10,6 +10,11 @@ h1 {
     text-align: center;
 }
 
+#option-container {
+    display: flex;
+    justify-content: center;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -105,7 +110,7 @@ h1 {
     padding: 5px;
 }
 
-.video-item-overlay-number, .video-item-overlay-number-1    {
+.video-item-overlay-number {
     font-size: 3rem;
     color: red;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
