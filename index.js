@@ -107,7 +107,7 @@
         const images = document.querySelectorAll('.item-overlay-number')
         const videos = document.querySelectorAll('.video-item-overlay-number')
         
-        const imageItemNumberArray = [[2], [4], [6], [8], [10], [12], [14], [16], [18], [20], [22], [24]];
+        const imageItemNumberArray = [[2, 1669852800000], [4], [6], [8], [10], [12], [14], [16], [18], [20], [22], [24]];
         
         const videoItemNumberArray = [[3], [5], [7], [9], [11], [13], [15], [17], [19], [21], [23], [25]];
 
@@ -119,8 +119,8 @@
 
         for (let i = 0; i < 12; i++) {
 
-            images[i].textContent = shuffledImageArray[i];
-            videos[i].textContent = shuffledVideoArray[i];
+            images[i].textContent = imageItemNumberArray[i];
+            videos[i].textContent = videoItemNumberArray[i];
             
         }
     }
@@ -155,8 +155,8 @@
     
     console.log(buttons);
 
-    buttons.forEach(button => {
-        button.addEventListener('click', (e) => {
+    // buttons.forEach(button => {
+        // button.addEventListener('click', (e) => {
             // const overlay = e.currentTarget.parentElement;
             // overlay.className = 'video-item-overlay open';
             // console.log(e.currentTarget.previousSibling.textContent);
@@ -193,7 +193,9 @@
         //         console.log('nope')
         //     }
         // }) 
-    });
+
+
+    // });
 
     // function regExDateTest(){
     //     /e.currentTarget.previousSibling.textContent/.test(dateSelect.value)
