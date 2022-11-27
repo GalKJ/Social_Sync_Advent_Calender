@@ -178,21 +178,21 @@
 
 // console.log(output);
 
-            let num = e.currentTarget.previousSibling.textContent;
-            console.log(num);
+            // let num = e.currentTarget.previousSibling.textContent;
+            // console.log(num);
 
-            let dynamicPart = num;
-            console.log(dynamicPart);
-            let regexObj = new RegExp(dynamicPart)
-            console.log(regexObj);
-            console.log(dateSelect.value);
+        //     let dynamicPart = num;
+        //     console.log(dynamicPart);
+        //     let regexObj = new RegExp(dynamicPart)
+        //     console.log(regexObj);
+        //     console.log(dateSelect.value);
             
-            if (regexObj.test(dateSelect.value)) {
-                console.log('open')
-            } else {
-                console.log('nope')
-            }
-        }) 
+        //     if (regexObj.test(dateSelect.value)) {
+        //         console.log('open')
+        //     } else {
+        //         console.log('nope')
+        //     }
+        // }) 
     });
 
     // function regExDateTest(){
