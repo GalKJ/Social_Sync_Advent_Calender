@@ -26,6 +26,12 @@
         itemOverlayNumber.textContent = '';
         itemOverlay.appendChild(itemOverlayNumber);
 
+        const dateValue = document.createElement('p');
+        dateValue.className = 'item-date-value';
+        dateValue.id = `item-date-value${id}`
+        dateValue.textContent = '';
+        itemOverlay.appendChild(dateValue);
+        
         const viewButton = document.createElement('button');
         viewButton.className = 'view-button';
         viewButton.textContent = '🎄View🎄';
