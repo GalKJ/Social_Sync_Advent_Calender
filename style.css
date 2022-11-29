@@ -82,7 +82,7 @@ input:valid + span::after {
     background-color: red;
     display: grid;
     justify-items: center;
-    align-items: center;
+    align-content: start;
 }
 
 .view-button {
@@ -123,13 +123,13 @@ input:valid + span::after {
     grid-row: 1 / -1;
 }
 
-.video-item-overlay {
+.video-item-overlay  {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
     background-color: forestgreen;
     display: grid;
     justify-items: center;
-    align-items: center;
+    align-content: start;
     z-index: 2;
 }
 
@@ -151,7 +151,7 @@ input:valid + span::after {
     padding: 5px;
 }
 
-.video-item-overlay-number {
+.video-item-overlay-number, .video-item-overlay-number-1 {
     font-size: 3rem;
     color: red;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

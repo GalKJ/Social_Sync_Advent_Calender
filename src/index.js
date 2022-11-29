@@ -1,8 +1,8 @@
 
 // Global selected variables
-    const dateSelect = document.querySelector('#date-select');
+    let dateSelect = document.querySelector('#date-select');
     const dateSubmitButton = document.querySelector('#submit-button');
-
+    let localCurrentDate = localStorage.getItem('Date');
     
 // Function to draw image and video items.
     function drawItems(container, id) {
@@ -55,6 +55,7 @@
         video.src = `./videos/${randomNumber(5)}.mp4`;
         video.preload = 'auto';
         video.muted = true;
+        video.autoplay = "false";
         videoItem.appendChild(video);
 
         const videoItemOverlay = document.createElement('div');
@@ -66,6 +67,12 @@
         videoItemOverlayNumber.id = `video-item-overlay-number${id}`
         videoItemOverlayNumber.textContent = '';
         videoItemOverlay.appendChild(videoItemOverlayNumber);
+
+        const videoDateValue = document.createElement('p');
+        videoDateValue.className = 'video-date-value';
+        videoDateValue.id = `video-date-value${id}`
+        videoDateValue.textContent = '';
+        videoItemOverlay.appendChild(videoDateValue);
 
         const videoViewButton = document.createElement('button');
         videoViewButton.className = 'video-view-button';
@@ -115,14 +122,14 @@
         const images = document.querySelectorAll('.item-overlay-number')
         const videos = document.querySelectorAll('.video-item-overlay-number')
         
-        const imageItemNumberArray = [[2, 1669852800000], [4], [6], [8], [10], [12], [14], [16], [18], [20], [22], [24]];
+        const imageItemNumberArray = [[2], [4], [6], [8], [10], [12], [14], [16], [18], [20], [22], [24]];
         
         const videoItemNumberArray = [[3], [5], [7], [9], [11], [13], [15], [17], [19], [21], [23], [25]];
 
         
-        const shuffledImageArray = imageItemNumberArray.sort((a, b) => 0.5 - Math.random());
+        // const shuffledImageArray = imageItemNumberArray.sort((a, b) => 0.5 - Math.random());
 
-        const shuffledVideoArray = videoItemNumberArray.sort((a, b) => 0.5 - Math.random());
+        // const shuffledVideoArray = videoItemNumberArray.sort((a, b) => 0.5 - Math.random());
 
 
         for (let i = 0; i < 12; i++) {
@@ -141,33 +148,37 @@
         e.preventDefault();
         let currentDate = dateSelect.valueAsNumber;
         localStorage.setItem('Date', `${currentDate}`);
+        localCurrentDate = localStorage.getItem('Date');
     })
 
     
-    // const buttons = document.querySelectorAll('.view-button');
-    // console.log(buttons);
-    
-    // buttons.forEach(button => {
-    //     button.addEventListener('click', (e) => {
-    //         const overlay = e.currentTarget.parentElement;
-    //         overlay.className = 'item-overlay open';
-    //     })
-    // });
-    
-    // const videoButtons = document.querySelectorAll('.video-view-button');
-    
-    // console.log(videoButtons);
-
-    // videoButtons.forEach(button => {
-    //     button.addEventListener('click', (e) => {
-    //         const overlay = e.currentTarget.parentElement;
-    //         overlay.className = 'video-item-overlay open';
-    //     }) 
-    // });
-
-    const buttons = document.querySelectorAll('button');
-    
+    const buttons = document.querySelectorAll('.view-button');
     console.log(buttons);
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const overlay = e.currentTarget.parentElement;
+            overlay.className = 'item-overlay open';
+        })
+    });
+    
+    const videoButtons = document.querySelectorAll('.video-view-button');
+    
+    console.log(videoButtons);
+
+    videoButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const overlay = e.currentTarget.parentElement;
+            overlay.className = 'video-item-overlay open';
+            const video = e.currentTarget.parentElement.parentElement;
+            // video.autoplay = "true";
+            
+        }) 
+    });
+
+    // const buttons = document.querySelectorAll('button');
+    
+    // console.log(buttons);
 
     // buttons.forEach(button => {
         // button.addEventListener('click', (e) => {
