@@ -10,7 +10,7 @@ In order to use the site you can go to [github pages]()
 
 ### Cloning 
 
-Please feel free to [clone the repo]()
+Please feel free to clone the repo by coping this link and running git clone in your terminal https://github.com/d0g3bl2/Social_Sync_Advent_Calender.git
 
 ---
 
