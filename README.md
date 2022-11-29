@@ -4,7 +4,7 @@
 
 ### Deploy the site
 
-In order to use the site you can go to [github pages]()
+In order to use the site you can go to [github pages](https://d0g3bl2.github.io/Social_Sync_Advent_Calender/)
 
 ---
 
