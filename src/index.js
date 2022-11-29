@@ -1,6 +1,8 @@
 
 // Global selected variables
     const dateSelect = document.querySelector('#date-select');
+    const dateSubmitButton = document.querySelector('#submit-button');
+
     
 // Function to draw image and video items.
     function drawItems(container, id) {
@@ -89,13 +91,13 @@
 
     function loadPage() {
 
-// Local storage init function below!
+// This if statement populates local storage with a date if it doesn't already exist retrieves it from local storage if it does and updates the date input either way.
 
-        // if (!localStorage.getItem('Won')) {
-        //     populateStorage(winsLossesCounterDisplay);
-        //   } else {
-        //     updateWinLoseCounterDisplay(winsLossesCounterDisplay);
-        //   }
+        if (!localStorage.getItem('Date')) {
+            populateStorage();
+          } else {
+            retrieveDateValueFromLocalStorage();
+          }
 
         const gridContainer = document.querySelector('#grid-container');
 
@@ -134,6 +136,12 @@
     loadPage();
 
     renderItemNumbers();
+    
+    dateSubmitButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        let currentDate = dateSelect.valueAsNumber;
+        localStorage.setItem('Date', `${currentDate}`);
+    })
 
     
     // const buttons = document.querySelectorAll('.view-button');
