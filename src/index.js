@@ -124,15 +124,14 @@
         const videos = document.querySelectorAll('.video-item-overlay-number');
         const imageDateValue = document.querySelectorAll('.item-date-value');
         const videoDateValue = document.querySelectorAll('.video-date-value');
-        console.log(videoDateValue);
         
         const imageItemNumberArray = [[2], [4], [6], [8], [10], [12], [14], [16], [18], [20], [22], [24]];
         
         const videoItemNumberArray = [[3], [5], [7], [9], [11], [13], [15], [17], [19], [21], [23], [25]];
 
-        const imageItemDateValue = [[1669939200000], [4], [6], [8], [10], [12], [14], [16], [18], [20], [22], [24]];
+        const imageItemDateValue = [[1669939200000], [1670112000000], [1670284800000], [1670457600000], [1670630400000], [1670803200000], [1670976000000], [1671148800000], [1671321600000], [1671494400000], [1671667200000], [1671840000000]];
         
-        const videoItemDateValue = [[3], [5], [7], [9], [11], [13], [15], [17], [19], [21], [23], [25]];
+        const videoItemDateValue = [[1670025600000], [1670198400000], [1670371200000], [1670544000000], [1670716800000], [1670889600000], [1671062400000], [1671235200000], [1671408000000], [1671580800000], [1671753600000], [1671926400000]];
 
 
         for (let i = 0; i < 12; i++) {
@@ -163,7 +162,11 @@
     buttons.forEach(button => {
         button.addEventListener('click', (e) => {
             const overlay = e.currentTarget.parentElement;
+            const dateValue = e.currentTarget.previousSibling;
+            
+            if (dateValue.textContent <= localCurrentDate) {
             overlay.className = 'item-overlay open';
+            }
         })
     });
     
@@ -172,9 +175,13 @@
     videoButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             const overlay = e.currentTarget.parentElement;
-            overlay.className = 'video-item-overlay open';
+            const dateValue = e.currentTarget.previousSibling;
+
+            if (dateValue.textContent <= localCurrentDate) {
+                overlay.className = 'video-item-overlay open';
             const video = e.currentTarget.parentElement.parentElement.children[0];
             video.setAttribute("autoplay", "true");
+            }
             
             
         }) 
