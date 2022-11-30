@@ -50,12 +50,13 @@
         const video = document.createElement('video');
         video.className = 'videos';
         video.id = `video${id}`;
+        video.setAttribute("muted", "true");
         video.height = 360;
         video.width = 360;
         video.src = `./videos/${randomNumber(5)}.mp4`;
         video.preload = 'auto';
-        video.muted = true;
-        video.autoplay = "false";
+        video.setAttribute("controls", "");
+        
         videoItem.appendChild(video);
 
         const videoItemOverlay = document.createElement('div');
@@ -170,8 +171,12 @@
         button.addEventListener('click', (e) => {
             const overlay = e.currentTarget.parentElement;
             overlay.className = 'video-item-overlay open';
-            const video = e.currentTarget.parentElement.parentElement;
-            // video.autoplay = "true";
+            const video = e.currentTarget.parentElement.parentElement.children[0];
+            console.log(video);
+            // video.setAttribute("muted", "true");
+            video.setAttribute("autoplay", "true");
+            // video.autoplay = true;
+            // video.muted = "true";
             
         }) 
     });
