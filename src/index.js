@@ -120,18 +120,27 @@
 
 
     function renderItemNumbers() {
-        const images = document.querySelectorAll('.item-overlay-number')
-        const videos = document.querySelectorAll('.video-item-overlay-number')
+        const images = document.querySelectorAll('.item-overlay-number');
+        const videos = document.querySelectorAll('.video-item-overlay-number');
+        const imageDateValue = document.querySelectorAll('.item-date-value');
+        const videoDateValue = document.querySelectorAll('.video-date-value');
+        console.log(videoDateValue);
         
         const imageItemNumberArray = [[2], [4], [6], [8], [10], [12], [14], [16], [18], [20], [22], [24]];
         
         const videoItemNumberArray = [[3], [5], [7], [9], [11], [13], [15], [17], [19], [21], [23], [25]];
+
+        const imageItemDateValue = [[1669939200000], [4], [6], [8], [10], [12], [14], [16], [18], [20], [22], [24]];
+        
+        const videoItemDateValue = [[3], [5], [7], [9], [11], [13], [15], [17], [19], [21], [23], [25]];
 
 
         for (let i = 0; i < 12; i++) {
 
             images[i].textContent = imageItemNumberArray[i];
             videos[i].textContent = videoItemNumberArray[i];
+            imageDateValue[i].textContent = imageItemDateValue[i];
+            videoDateValue[i].textContent = videoItemDateValue[i];
             
         }
     }
@@ -143,13 +152,13 @@
     dateSubmitButton.addEventListener('click', (e) => {
         e.preventDefault();
         let currentDate = dateSelect.valueAsNumber;
+        console.log(currentDate);
         localStorage.setItem('Date', `${currentDate}`);
         localCurrentDate = localStorage.getItem('Date');
     })
 
     
     const buttons = document.querySelectorAll('.view-button');
-    console.log(buttons);
     
     buttons.forEach(button => {
         button.addEventListener('click', (e) => {
@@ -159,19 +168,14 @@
     });
     
     const videoButtons = document.querySelectorAll('.video-view-button');
-    
-    console.log(videoButtons);
 
     videoButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             const overlay = e.currentTarget.parentElement;
             overlay.className = 'video-item-overlay open';
             const video = e.currentTarget.parentElement.parentElement.children[0];
-            console.log(video);
-            // video.setAttribute("muted", "true");
             video.setAttribute("autoplay", "true");
-            // video.autoplay = true;
-            // video.muted = "true";
+            
             
         }) 
     });
