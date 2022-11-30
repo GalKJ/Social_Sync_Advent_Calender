@@ -85,6 +85,10 @@ input:valid + span::after {
     align-content: start;
 }
 
+.item-date-value {
+    color: red;
+}
+
 .view-button {
     font-size: 1.5rem;
     border: 2px solid forestgreen;
@@ -131,6 +135,10 @@ input:valid + span::after {
     justify-items: center;
     align-content: start;
     z-index: 2;
+}
+
+.video-date-value, .video-date-value-1 {
+    color: forestgreen;
 }
 
 .video-view-button {
