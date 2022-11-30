@@ -127,11 +127,6 @@
         
         const videoItemNumberArray = [[3], [5], [7], [9], [11], [13], [15], [17], [19], [21], [23], [25]];
 
-        
-        // const shuffledImageArray = imageItemNumberArray.sort((a, b) => 0.5 - Math.random());
-
-        // const shuffledVideoArray = videoItemNumberArray.sort((a, b) => 0.5 - Math.random());
-
 
         for (let i = 0; i < 12; i++) {
 
